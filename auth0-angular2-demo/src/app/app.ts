@@ -28,8 +28,8 @@ class PrivateRoute {
   directives: [ ROUTER_DIRECTIVES ],
   template: `
     <h1>Welcome to Angular2 with Auth0</h1>
-    <button *ngIf="!loggedIn()" (click)="login()">Login</button>
-    <button *ngIf="loggedIn()" (click)="logout()">Logout</button>
+    <!-- <button *ngIf="!loggedIn()" (click)="login()">Login</button> -->
+    <!-- <button *ngIf="loggedIn()" (click)="logout()">Logout</button> -->
     <hr>
     <div>
       <button [routerLink]="['./PublicRoute']">Public Route</button>
