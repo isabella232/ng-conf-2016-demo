@@ -48,8 +48,7 @@ class PrivateRoute {
   { path: '/private-route', component: PrivateRoute, as: 'PrivateRoute' }
 ])
 export class App {
-
-  lock = new Auth0Lock('AUTH0_CLIENT_ID', 'AUTH0_DOMAIN');
+  lock = new Auth0Lock('FIluNL0AWyBE3hYs3exbawhJD9rZNdh3', 'kperch.auth0.com');
   jwtHelper: JwtHelper = new JwtHelper();
 
   constructor(public http: Http, public authHttp: AuthHttp) {}
