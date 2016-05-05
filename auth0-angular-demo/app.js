@@ -14,36 +14,36 @@ angular.module( 'sample', [
       pageTitle: 'Homepage',
       requiresLogin: true
     })
-    .when( '/login', {
-      controller: 'LoginCtrl',
-      templateUrl: 'login/login.html',
-      pageTitle: 'Login'
-    });
+    // .when( '/login', {
+    //   controller: 'LoginCtrl',
+    //   templateUrl: 'login/login.html',
+    //   pageTitle: 'Login'
+    // });
 
 
-  authProvider.init({
-    domain: AUTH0_DOMAIN,
-    clientID: AUTH0_CLIENT_ID,
-    loginUrl: '/login'
-  });
+  // authProvider.init({
+  //   domain: AUTH0_DOMAIN,
+  //   clientID: AUTH0_CLIENT_ID,
+  //   loginUrl: '/login'
+  // });
   
-  authProvider.on('loginSuccess', function($location, profilePromise, idToken, store) {
-    console.log("Login Success");
-    profilePromise.then(function(profile) {
-      store.set('profile', profile);
-      store.set('token', idToken);
-    });
-    $location.path('/');
-  });
+  // authProvider.on('loginSuccess', function($location, profilePromise, idToken, store) {
+  //   console.log("Login Success");
+  //   profilePromise.then(function(profile) {
+  //     store.set('profile', profile);
+  //     store.set('token', idToken);
+  //   });
+  //   $location.path('/');
+  // });
 
-  authProvider.on('loginFailure', function() {
-    alert("Error");
-  });
+  // authProvider.on('loginFailure', function() {
+  //   alert("Error");
+  // });
 
-  authProvider.on('authenticated', function($location) {
-    console.log("Authenticated");
+  // authProvider.on('authenticated', function($location) {
+  //   console.log("Authenticated");
 
-  });
+  // });
 
   jwtInterceptorProvider.tokenGetter = function(store) {
     return store.get('token');
@@ -71,10 +71,10 @@ angular.module( 'sample', [
   });
 })
 .controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
-  $scope.$on('$routeChangeSuccess', function(e, nextRoute){
-    if ( nextRoute.$$route && angular.isDefined( nextRoute.$$route.pageTitle ) ) {
-      $scope.pageTitle = nextRoute.$$route.pageTitle + ' | Auth0 Sample' ;
-    }
-  });
+  // $scope.$on('$routeChangeSuccess', function(e, nextRoute){
+  //   if ( nextRoute.$$route && angular.isDefined( nextRoute.$$route.pageTitle ) ) {
+  //     $scope.pageTitle = nextRoute.$$route.pageTitle + ' | Auth0 Sample' ;
+  //   }
+  // });
 });
 
